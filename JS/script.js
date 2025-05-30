@@ -3,7 +3,7 @@ const title = document.querySelector('h1'); //Store h1 in variable
 title.textContent = "Story Maker"; //Set title
 
 //Set nouns display
-const nounHolder = document.querySelector('section div:nth-child(1) ul'); //Select ol for nouns
+const nounHolder = document.querySelector('section div:nth-child(1) ol'); //Select ol for nouns
 let nounArray = ["The Turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]; // Set noun array
 for (let i = 0; i < nounArray.length; i ++){ //For loop to cycle through array
     let list = document.createElement("li"); //Creates li element
@@ -26,7 +26,7 @@ function selectNoun(){ //Function for selecting noun
 }
 
 //Set Verb display
-const verbHolder = document.querySelector('section div:nth-child(2) ul'); //Select ol for verbs
+const verbHolder = document.querySelector('section div:nth-child(2) ol'); //Select ol for verbs
 let verbArray = ["sat on", "ate", "danced with", "saw", "doesn't like", "kissed"]; //Verb array
 for (let i = 0; i < verbArray.length; i ++){ //For loop to cycle through verbs
     let list = document.createElement("li"); //Creates li element
@@ -49,7 +49,7 @@ function selectVerb(){
 }
 
 //Set adjective display
-const adjectiveHolder = document.querySelector('section div:nth-child(3) ul'); //Select ol for adjectives
+const adjectiveHolder = document.querySelector('section div:nth-child(3) ol'); //Select ol for adjectives
 let adjectiveArray = ["a funny", "a scary", "a goofy", "a slimy", "a barking", "a fat"]; //Adjectives array
 for (let i = 0; i < adjectiveArray.length; i ++){ //For loop to cycle through adjectives
     let list = document.createElement("li"); //Creates li element
@@ -72,7 +72,7 @@ function selectAdjective(){
 }
 
 //Setup animal display
-const animalHolder = document.querySelector('section div:nth-child(4) ul');
+const animalHolder = document.querySelector('section div:nth-child(4) ol');
 let animalArray = ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"];
 for (let i = 0; i < animalArray.length; i++){
     let list = document.createElement('li');
