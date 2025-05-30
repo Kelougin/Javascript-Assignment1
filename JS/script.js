@@ -72,48 +72,48 @@ function selectAdjective(){
 }
 
 //Setup animal display
-const animalHolder = document.querySelector('section div:nth-child(4) ol');
-let animalArray = ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"];
-for (let i = 0; i < animalArray.length; i++){
-    let list = document.createElement('li');
-    animalHolder.append(list);
-    list.textContent =`${animalArray[i]}`;
+const animalHolder = document.querySelector('section div:nth-child(4) ol'); //Select ol for animals
+let animalArray = ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"]; //Animal array
+for (let i = 0; i < animalArray.length; i++){ //For loop to cycle through animals
+    let list = document.createElement('li'); //Creates li element
+    animalHolder.append(list); //Add li to ol
+    list.textContent =`${animalArray[i]}`; //Add text content for li
 }
 
 //Setup animal button
-const animalButton = document.querySelector('#animal');
-let animalIncrement = 0;
-animalButton.addEventListener("click", selectAnimal);
+const animalButton = document.querySelector('#animal'); //Select animal button
+let animalIncrement = 0; //Set animal increment variable
+animalButton.addEventListener("click", selectAnimal); //Add event to button on click calls selectAnimal function
 function selectAnimal(){
     console.log(`${animalArray[animalIncrement]}`);
     playbackArray[3] = animalArray[animalIncrement];
-    if (animalIncrement > 5){
-        animalIncrement = 0;
+    if (animalIncrement > 5){ //Check if increment is greater than 5
+        animalIncrement = 0; //reset increment to 0
     }else{
-        animalIncrement ++;
+        animalIncrement ++; //Increase increment
     }
 }
 
 //Setup location display
-const locationHolder = document.querySelector('section div:nth-child(5) ol');
-let locationArray = ["on the moon", "on the chair", "in my spaghetti", "in my soup", "on the grass", "in my shoes"]
-for (let i =0; i < locationArray.length; i ++){
-    let list = document.createElement('li');
-    locationHolder.append(list);
-    list.textContent =`${locationArray[i]}`;
+const locationHolder = document.querySelector('section div:nth-child(5) ol'); //Select ol for location
+let locationArray = ["on the moon", "on the chair", "in my spaghetti", "in my soup", "on the grass", "in my shoes"]; //Location array
+for (let i =0; i < locationArray.length; i ++){ //For loop to cycle through locations
+    let list = document.createElement('li'); //Creates li element
+    locationHolder.append(list); //Add li to ol
+    list.textContent =`${locationArray[i]}`; //Add text content for li
 }
 
 //Setup location button
-const locationButton = document.querySelector('#location');
-let locationIncrement = 0;
-locationButton.addEventListener("click", selectLocation);
+const locationButton = document.querySelector('#location'); //Select location button
+let locationIncrement = 0; //Set location increment variable
+locationButton.addEventListener("click", selectLocation); //Add event to button on click calls selectLocation function
 function selectLocation(){
     console.log(`${locationArray[locationIncrement]}`);
     playbackArray[4] = locationArray[locationIncrement];
-    if (locationIncrement > 4){
-        locationIncrement = 0;
+    if (locationIncrement > 4){ //Check if increment is greater than 4
+        locationIncrement = 0; //reset increment to 0
     }else{
-        locationIncrement ++;
+        locationIncrement ++; //Increase increment
     }
 }
 
