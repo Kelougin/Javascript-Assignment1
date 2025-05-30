@@ -117,11 +117,10 @@ function selectLocation(){
     }
 }
 //Setup text display
-const buttonSection = document.querySelector('main:nth-child(2)');
-const displayPlayback = document.createElement('p');
-const displayRandom = document.createElement('p');
-buttonSection.append(displayPlayback);
-buttonSection.append(displayRandom);
+const buttonSection = document.querySelector('main:nth-child(2)'); //Select button section
+const displayPlayback = document.createElement('p'); //Create element p
+const displayRandom = document.createElement('p'); //Creat element p
+buttonSection.append(displayPlayback, displayRandom); //Add elements p to button section
 
 //Start playback setup
 const playback = document.querySelector('#playback'); //Selects playback button
