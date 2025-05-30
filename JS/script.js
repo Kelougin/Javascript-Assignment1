@@ -85,7 +85,7 @@ const animalButton = document.querySelector('#animal');
 let animalIncrement = 0;
 animalButton.addEventListener("click", selectAnimal);
 function selectAnimal(){
-    console.log((`${animalArray[animalIncrement]}`));
+    console.log(`${animalArray[animalIncrement]}`);
     playbackArray[3] = animalArray[animalIncrement];
     if (animalIncrement > 5){
         animalIncrement = 0;
@@ -94,12 +94,35 @@ function selectAnimal(){
     }
 }
 
+//Setup location display
+const locationHolder = document.querySelector('section div:nth-child(5) ol');
+let locationArray = ["on the moon", "on the chair", "in my spaghetti", "in my soup", "on the grass", "in my shoes"]
+for (let i =0; i < locationArray.length; i ++){
+    let list = document.createElement('li');
+    locationHolder.append(list);
+    list.textContent =`${locationArray[i]}`;
+}
+
+//Setup location button
+const locationButton = document.querySelector('#location');
+let locationIncrement = 0;
+locationButton.addEventListener("click", selectLocation);
+function selectLocation(){
+    console.log(`${locationArray[locationIncrement]}`);
+    playbackArray[4] = locationArray[locationIncrement];
+    if (locationIncrement > 4){
+        locationIncrement = 0;
+    }else{
+        locationIncrement ++;
+    }
+}
+
 //Start playback setup
 const playback = document.querySelector('#playback'); //Selects playback button
-let playbackArray = [nounArray[0], verbArray[0], adjectiveArray[0], animalArray[0]]; //Set up empty array for play
+let playbackArray = [nounArray[0], verbArray[0], adjectiveArray[0], animalArray[0], locationArray[0]]; //Set up empty array for play
 playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
-    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`);
+    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`+ " " + `${playbackArray[4]}.`);
 }
 
 //Start random short story
@@ -114,5 +137,5 @@ function randomStory(){
     for (let i = 0; i < 3; i ++){ //for loop to generate 3 random numbers
         randomArrayTwo[i] = Math.floor(Math.random() * 6); //Generate and store random number in array
     }
-    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`);
+    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`+ " " + `${locationArray[randomArrayTwo[2]]}.`);
 }
