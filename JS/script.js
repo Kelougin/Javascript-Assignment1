@@ -25,21 +25,48 @@ function selectNoun(){ //Function for selecting noun
     }
 }
 
+//Set Verb display
+const verbHolder = document.querySelector('section div:nth-child(2) ol');
+let verbArray = ["sat on", "ate", "danced with", "saw", "doesn't like", "kissed"];
+for (let i = 0; i < verbArray.length; i ++){
+    let list = document.createElement("li"); //Creates li element
+    verbHolder.append(list);
+    list.textContent = `${verbArray[i]}`;
+}
+
+//Setup verb button
+const verbButton = document.querySelector('#verb');
+let verbIncrement = 0;
+verbButton.addEventListener("click", selectVerb);
+function selectVerb(){
+    console.log(`${verbArray[verbIncrement]}`);
+    playbackArray[1] = verbArray[verbIncrement];
+    if (verbIncrement > 4){
+        verbIncrement = 0;
+    }else{
+        verbIncrement ++;
+    }
+}
+
 //Start playback setup
 const playback = document.querySelector('#playback'); //Selects playback button
-let playbackArray = [nounArray[0]]; //Set up empty array for play
+let playbackArray = [nounArray[0], verbArray[0]]; //Set up empty array for play
 playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
-    console.log(`${playbackArray[0]}`);
+    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`);
 }
 
 //Start random short story
 const randomButton = document.querySelector('#random') //Selects the random button
-let randomArray = []; //Array for storing random numbers
+let randomArray = []; //Array for storing random numbers for noun and animal
+let randomArrayTwo = []; ///Array for storing random number for other 3 columns
 randomButton.addEventListener("click", randomStory); //Add event to button on click that calls randomStory function
 function randomStory(){
-    for (let i = 0; i < 5; i ++){ //for loop to generate 5 random numbers
+    for (let i = 0; i < 2; i ++){ //for loop to generate 2 random numbers
         randomArray[i] = Math.floor(Math.random() * 7); //Generate and store random number in array
     }
-    console.log(`${nounArray[randomArray[0]]}`);
+    for (let i = 0; i < 3; i ++){ //for loop to generate 3 random numbers
+        randomArrayTwo[i] = Math.floor(Math.random() * 6); //Generate and store random number in array
+    }
+    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}`);
 }
