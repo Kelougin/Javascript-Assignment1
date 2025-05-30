@@ -16,7 +16,7 @@ const nounButton = document.querySelector('#noun'); //Select button for noun
 let nounIncrement = 0; //variable for cycling through array
 nounButton.addEventListener("click", selectNoun); //Add event to button on click, that call selectNoun function
 function selectNoun(){ //Function for selecting noun
-    console.log(`${nounArray[nounIncrement]}`);
+    console.log(`${nounArray[nounIncrement]}`); //Console log for testing
     playbackArray[0] = nounArray[nounIncrement]; //Store current noun in playback array
     if (nounIncrement > 5){ //Check if increment is greater than 5
         nounIncrement = 0; //Resets increment
@@ -39,7 +39,7 @@ const verbButton = document.querySelector('#verb'); //Select verb button
 let verbIncrement = 0; //Set verb increment variable
 verbButton.addEventListener("click", selectVerb); //Add event to button on click calls selectVerb function
 function selectVerb(){
-    console.log(`${verbArray[verbIncrement]}`);
+    console.log(`${verbArray[verbIncrement]}`); //Console log for testing
     playbackArray[1] = verbArray[verbIncrement]; //Add verb to playback array
     if (verbIncrement > 4){ //Check if increment is greater than 4
         verbIncrement = 0; //reset increment to 0
@@ -62,7 +62,7 @@ const adjectiveButton = document.querySelector('#adjective'); //Select adjective
 let adjectiveIncrement = 0; //Set adjective increment variable
 adjectiveButton.addEventListener("click", selectAdjective); //Add event to button on click calls selectAdjective function
 function selectAdjective(){
-    console.log(`${adjectiveArray[adjectiveIncrement]}`);
+    console.log(`${adjectiveArray[adjectiveIncrement]}`); //Console log for testing
     playbackArray[2] = adjectiveArray[adjectiveIncrement]; //Add adjective to playback array
     if (adjectiveIncrement > 4){ //Check if increment is greater than 4
         adjectiveIncrement = 0; //reset increment to 0
@@ -85,8 +85,8 @@ const animalButton = document.querySelector('#animal'); //Select animal button
 let animalIncrement = 0; //Set animal increment variable
 animalButton.addEventListener("click", selectAnimal); //Add event to button on click calls selectAnimal function
 function selectAnimal(){
-    console.log(`${animalArray[animalIncrement]}`);
-    playbackArray[3] = animalArray[animalIncrement];
+    console.log(`${animalArray[animalIncrement]}`); //Console log for testing
+    playbackArray[3] = animalArray[animalIncrement]; //Add animal to playback array
     if (animalIncrement > 5){ //Check if increment is greater than 5
         animalIncrement = 0; //reset increment to 0
     }else{
@@ -108,21 +108,27 @@ const locationButton = document.querySelector('#location'); //Select location bu
 let locationIncrement = 0; //Set location increment variable
 locationButton.addEventListener("click", selectLocation); //Add event to button on click calls selectLocation function
 function selectLocation(){
-    console.log(`${locationArray[locationIncrement]}`);
-    playbackArray[4] = locationArray[locationIncrement];
+    console.log(`${locationArray[locationIncrement]}`); //Console log for testing
+    playbackArray[4] = locationArray[locationIncrement]; //Add location to playback array
     if (locationIncrement > 4){ //Check if increment is greater than 4
         locationIncrement = 0; //reset increment to 0
     }else{
         locationIncrement ++; //Increase increment
     }
 }
+//Setup text display
+const buttonSection = document.querySelector('main:nth-child(2)');
+const displayPlayback = document.createElement('p');
+const displayRandom = document.createElement('p');
+buttonSection.append(displayPlayback);
+buttonSection.append(displayRandom);
 
 //Start playback setup
 const playback = document.querySelector('#playback'); //Selects playback button
 let playbackArray = [nounArray[0], verbArray[0], adjectiveArray[0], animalArray[0], locationArray[0]]; //Set up empty array for play
 playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
-    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`+ " " + `${playbackArray[4]}.`);
+    displayPlayback.textContent = `${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`+ " " + `${playbackArray[4]}.`; //Display current story in playback
 }
 
 //Start random short story
@@ -137,5 +143,6 @@ function randomStory(){
     for (let i = 0; i < 3; i ++){ //for loop to generate 3 random numbers
         randomArrayTwo[i] = Math.floor(Math.random() * 6); //Generate and store random number in array
     }
-    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`+ " " + `${locationArray[randomArrayTwo[2]]}.`);
+    //Display a random story
+    displayRandom.textContent = `${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`+ " " + `${locationArray[randomArrayTwo[2]]}.`;
 }
