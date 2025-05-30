@@ -12,35 +12,34 @@ for (let i = 0; i < nounArray.length; i ++){ //For loop to cycle through array
 }
 
  //Setup noun button
-const nounButton = document.querySelector('#noun');
-let nounIncrement = 0;
-nounButton.addEventListener("click", selectNoun);
-function selectNoun(){
+const nounButton = document.querySelector('#noun'); //Select button for noun
+let nounIncrement = 0; //variable for cycling through array
+nounButton.addEventListener("click", selectNoun); //Add event to button on click, that call selectNoun function
+function selectNoun(){ //Function for selecting noun
     console.log(`${nounArray[nounIncrement]}`);
-    playbackArray[0] = nounArray[nounIncrement];
-    if (nounIncrement > 5){
-        nounIncrement = 0;
+    playbackArray[0] = nounArray[nounIncrement]; //Store current noun in playback array
+    if (nounIncrement > 5){ //Check if increment is greater than 5
+        nounIncrement = 0; //Resets increment
     }else{
-        nounIncrement ++;
+        nounIncrement ++; //Increment to cycle to next noun
     }
-
 }
 
 //Start playback setup
-const playback = document.querySelector('#playback');
-let playbackArray = [];
-playback.addEventListener("click", playbackFunction)
+const playback = document.querySelector('#playback'); //Selects playback button
+let playbackArray = [nounArray[0]]; //Set up empty array for play
+playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
     console.log(`${playbackArray[0]}`);
 }
 
 //Start random short story
-const randomButton = document.querySelector('#random')
-let randomArray = [];
-randomButton.addEventListener("click", randomStory);
+const randomButton = document.querySelector('#random') //Selects the random button
+let randomArray = []; //Array for storing random numbers
+randomButton.addEventListener("click", randomStory); //Add event to button on click that calls randomStory function
 function randomStory(){
-    for (let i = 0; i < 5; i ++){
-        randomArray[i] = Math.floor(Math.random() * 7);
+    for (let i = 0; i < 5; i ++){ //for loop to generate 5 random numbers
+        randomArray[i] = Math.floor(Math.random() * 7); //Generate and store random number in array
     }
     console.log(`${nounArray[randomArray[0]]}`);
 }
