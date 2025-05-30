@@ -3,7 +3,7 @@ const title = document.querySelector('h1'); //Store h1 in variable
 title.textContent = "Story Maker"; //Set title
 
 //Set nouns display
-const nounHolder = document.querySelector('section div:nth-child(1) ol'); //Select ol for nouns
+const nounHolder = document.querySelector('section div:nth-child(1) ul'); //Select ol for nouns
 let nounArray = ["The Turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]; // Set noun array
 for (let i = 0; i < nounArray.length; i ++){ //For loop to cycle through array
     let list = document.createElement("li"); //Creates li element
@@ -26,34 +26,80 @@ function selectNoun(){ //Function for selecting noun
 }
 
 //Set Verb display
-const verbHolder = document.querySelector('section div:nth-child(2) ol');
-let verbArray = ["sat on", "ate", "danced with", "saw", "doesn't like", "kissed"];
-for (let i = 0; i < verbArray.length; i ++){
+const verbHolder = document.querySelector('section div:nth-child(2) ul'); //Select ol for verbs
+let verbArray = ["sat on", "ate", "danced with", "saw", "doesn't like", "kissed"]; //Verb array
+for (let i = 0; i < verbArray.length; i ++){ //For loop to cycle through verbs
     let list = document.createElement("li"); //Creates li element
-    verbHolder.append(list);
-    list.textContent = `${verbArray[i]}`;
+    verbHolder.append(list); //Add li to ol
+    list.textContent = `${verbArray[i]}`; //Add text content for li
 }
 
 //Setup verb button
-const verbButton = document.querySelector('#verb');
-let verbIncrement = 0;
-verbButton.addEventListener("click", selectVerb);
+const verbButton = document.querySelector('#verb'); //Select verb button
+let verbIncrement = 0; //Set verb increment variable
+verbButton.addEventListener("click", selectVerb); //Add event to button on click calls selectVerb function
 function selectVerb(){
     console.log(`${verbArray[verbIncrement]}`);
-    playbackArray[1] = verbArray[verbIncrement];
-    if (verbIncrement > 4){
-        verbIncrement = 0;
+    playbackArray[1] = verbArray[verbIncrement]; //Add verb to playback array
+    if (verbIncrement > 4){ //Check if increment is greater than 4
+        verbIncrement = 0; //reset increment to 0
     }else{
-        verbIncrement ++;
+        verbIncrement ++; //Increase increment
+    }
+}
+
+//Set adjective display
+const adjectiveHolder = document.querySelector('section div:nth-child(3) ul'); //Select ol for adjectives
+let adjectiveArray = ["a funny", "a scary", "a goofy", "a slimy", "a barking", "a fat"]; //Adjectives array
+for (let i = 0; i < adjectiveArray.length; i ++){ //For loop to cycle through adjectives
+    let list = document.createElement("li"); //Creates li element
+    adjectiveHolder.append(list); //Add li to ol
+    list.textContent = `${adjectiveArray[i]}`; //Add text content for li
+}
+
+//Setup adjective button
+const adjectiveButton = document.querySelector('#adjective'); //Select adjective button
+let adjectiveIncrement = 0; //Set adjective increment variable
+adjectiveButton.addEventListener("click", selectAdjective); //Add event to button on click calls selectAdjective function
+function selectAdjective(){
+    console.log(`${adjectiveArray[adjectiveIncrement]}`);
+    playbackArray[2] = adjectiveArray[adjectiveIncrement]; //Add adjective to playback array
+    if (adjectiveIncrement > 4){ //Check if increment is greater than 4
+        adjectiveIncrement = 0; //reset increment to 0
+    }else{
+        adjectiveIncrement ++; //Increase increment
+    }
+}
+
+//Setup animal display
+const animalHolder = document.querySelector('section div:nth-child(4) ul');
+let animalArray = ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"];
+for (let i = 0; i < animalArray.length; i++){
+    let list = document.createElement('li');
+    animalHolder.append(list);
+    list.textContent =`${animalArray[i]}`;
+}
+
+//Setup animal button
+const animalButton = document.querySelector('#animal');
+let animalIncrement = 0;
+animalButton.addEventListener("click", selectAnimal);
+function selectAnimal(){
+    console.log((`${animalArray[animalIncrement]}`));
+    playbackArray[3] = animalArray[animalIncrement];
+    if (animalIncrement > 5){
+        animalIncrement = 0;
+    }else{
+        animalIncrement ++;
     }
 }
 
 //Start playback setup
 const playback = document.querySelector('#playback'); //Selects playback button
-let playbackArray = [nounArray[0], verbArray[0]]; //Set up empty array for play
+let playbackArray = [nounArray[0], verbArray[0], adjectiveArray[0], animalArray[0]]; //Set up empty array for play
 playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
-    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`);
+    console.log(`${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`);
 }
 
 //Start random short story
@@ -68,5 +114,5 @@ function randomStory(){
     for (let i = 0; i < 3; i ++){ //for loop to generate 3 random numbers
         randomArrayTwo[i] = Math.floor(Math.random() * 6); //Generate and store random number in array
     }
-    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}`);
+    console.log(`${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`);
 }
