@@ -1,0 +1,56 @@
+body{
+    background-color: yellow;
+    justify-items: center;
+}
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "Words"
+    "Buttons";
+}
+section{
+    display: flex;
+    padding: 20px;
+}
+main section:first-child{
+    grid-area: Words;
+}
+main section:nth-child(2){
+    grid-area: Buttons;
+}
+ol{
+    margin: 20px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+li{
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+section div:nth-child(1) ol, #noun{
+    background-color: purple;
+}
+section div:nth-child(2) ol, #verb{
+    background-color: lightskyblue;
+}
+section div:nth-child(3) ol, #adjective{
+    background-color: lime;
+}
+section div:nth-child(4) ol, #animal{
+    background-color: orange;
+}
+section div:nth-child(5) ol, #location{
+    background-color: deeppink;
+}
+#random{
+    background-color: red;
+}
+#playback{
+    background-color: green;
+}
