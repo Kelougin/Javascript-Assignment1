@@ -117,7 +117,7 @@ function selectLocation(){
     }
 }
 //Setup text display
-const buttonSection = document.querySelector('main:nth-child(2)'); //Select button section
+const buttonSection = document.querySelector('main section:nth-child(2) div:nth-child(2)'); //Select button section
 const displayPlayback = document.createElement('p'); //Create element p
 const displayRandom = document.createElement('p'); //Creat element p
 buttonSection.append(displayPlayback, displayRandom); //Add elements p to button section
@@ -127,7 +127,7 @@ const playback = document.querySelector('#playback'); //Selects playback button
 let playbackArray = [nounArray[0], verbArray[0], adjectiveArray[0], animalArray[0], locationArray[0]]; //Set up empty array for play
 playback.addEventListener("click", playbackFunction) //Add event to button on click that calls playbackFunction
 function playbackFunction(){
-    displayPlayback.textContent = `${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`+ " " + `${playbackArray[4]}.`; //Display current story in playback
+    displayPlayback.textContent = `Current playback: ${playbackArray[0]}` + " " + `${playbackArray[1]}`+ " " + `${playbackArray[2]}`+ " " + `${playbackArray[3]}`+ " " + `${playbackArray[4]}.`; //Display current story in playback
 }
 
 //Start random short story
@@ -143,5 +143,5 @@ function randomStory(){
         randomArrayTwo[i] = Math.floor(Math.random() * 6); //Generate and store random number in array
     }
     //Display a random story
-    displayRandom.textContent = `${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`+ " " + `${locationArray[randomArrayTwo[2]]}.`;
+    displayRandom.textContent = `Random Story: ${nounArray[randomArray[0]]}` + " " + `${verbArray[randomArrayTwo[0]]}` + " " + `${adjectiveArray[randomArrayTwo[1]]}`+ " " + `${animalArray[randomArray[1]]}`+ " " + `${locationArray[randomArrayTwo[2]]}.`;
 }
