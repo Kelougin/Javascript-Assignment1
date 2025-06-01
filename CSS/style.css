@@ -22,6 +22,9 @@ main section:first-child{
 main section:nth-child(2){
     grid-area: Buttons;
 }
+main section:nth-child(2) div{
+    display: flex;
+}
 ol{
     margin: 20px;
     padding: 10px;
@@ -53,4 +56,8 @@ section div:nth-child(5) ol, #location{
 }
 #playback{
     background-color: green;
+}
+button{
+    margin: 50px;
+    padding: 30px;
 }
