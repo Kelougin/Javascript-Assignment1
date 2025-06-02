@@ -4,7 +4,7 @@ title.textContent = "Story Maker"; //Set title
 
 //Set nouns display
 const nounHolder = document.querySelector('section div:nth-child(1) ol'); //Select ol for nouns
-let nounArray = ["The Turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]; // Set noun array
+let nounArray = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]; // Set noun array
 for (let i = 0; i < nounArray.length; i ++){ //For loop to cycle through array
     let list = document.createElement("li"); //Creates li element
     nounHolder.append(list); //Add li to ol element
@@ -18,10 +18,49 @@ nounButton.addEventListener("click", selectNoun); //Add event to button on click
 function selectNoun(){ //Function for selecting noun
     console.log(`${nounArray[nounIncrement]}`); //Console log for testing
     playbackArray[0] = nounArray[nounIncrement]; //Store current noun in playback array
+    highlightNoun();
     if (nounIncrement > 5){ //Check if increment is greater than 5
         nounIncrement = 0; //Resets increment
     }else{
         nounIncrement ++; //Increment to cycle to next noun
+    }
+}
+function highlightNoun (){
+    if (playbackArray[0] === "The turkey"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(7)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:first-child');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "Mom"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:first-child');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(2)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "Dad"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(2)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(3)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "The dog"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(3)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(4)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "My teacher"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(4)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(5)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "The elephant"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(5)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(6)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
+    } else if (playbackArray[0] === "The cat"){
+        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(6)');
+        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(7)');
+        nounItem.style.boxShadow = "0 0 0 0";
+        nounItem2.style.boxShadow = "0 0 3px 2px white";
     }
 }
 

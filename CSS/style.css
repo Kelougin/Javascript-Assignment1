@@ -3,10 +3,9 @@ body{
     justify-items: center;
 }
 header{
-    grid-area: header;
+
 }
 main{
-    grid-area: main;
     display: grid;
     grid-template-areas:
     "Words"
@@ -22,6 +21,7 @@ main section:first-child{
 main section:nth-child(2){
     grid-area: Buttons;
     flex-direction: column;
+    padding-top: 0;
 }
 main section:nth-child(2) div{
     display: flex;
@@ -77,4 +77,12 @@ h1{
 p{
     margin: 20px;
     font-size: 1.2rem;
+    display: flex;
+    height: fit-content;
+    width: 250px;
+}
+main section:nth-child(2) div p:nth-child(4){
+    position: relative;
+    left: -22.5%;
+    bottom: -45%;
 }
