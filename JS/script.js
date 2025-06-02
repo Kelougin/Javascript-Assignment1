@@ -159,7 +159,7 @@ function selectAdjective(){
     }
 }
 
-// Setup adjective highlight
+// Setup adjective highlights
 function highlightAdjective(){
     if (playbackArray[2] === "a funny"){ //Check word in playback array
         let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(6)'); //Selects element to remove box shadow
