@@ -212,7 +212,7 @@ animalButton.addEventListener("click", selectAnimal); //Add event to button on c
 function selectAnimal(){
     console.log(`${animalArray[animalIncrement]}`); //Console log for testing
     playbackArray[3] = animalArray[animalIncrement]; //Add animal to playback array
-    highlightAnimal();
+    highlightAnimal(); //Call function
     if (animalIncrement > 6){ //Check if increment is greater than 5
         animalIncrement = 0; //reset increment to 0
     }else{
