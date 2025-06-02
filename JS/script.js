@@ -4,7 +4,7 @@ title.textContent = "Story Maker"; //Set title
 
 //Set nouns display
 const nounHolder = document.querySelector('section div:nth-child(1) ol'); //Select ol for nouns
-let nounArray = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat", "d"]; // Set noun array
+let nounArray = ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"]; // Set noun array
 for (let i = 0; i < nounArray.length; i ++){ //For loop to cycle through array
     let list = document.createElement("li"); //Creates li element
     nounHolder.append(list); //Add li to ol element
@@ -19,52 +19,53 @@ function selectNoun(){ //Function for selecting noun
     console.log(`${nounArray[nounIncrement]}`); //Console log for testing
     playbackArray[0] = nounArray[nounIncrement]; //Store current noun in playback array
     highlightNoun();
-    if (nounIncrement > 6){ //Check if increment is greater than 5
+    if (nounIncrement > 5){ //Check if increment is greater than 5
         nounIncrement = 0; //Resets increment
     }else{
         nounIncrement ++; //Increment to cycle to next noun
     }
 }
-function highlightNoun (){
+//Setup noun highlight
+function highlightNoun(){
     if (playbackArray[0] === "The turkey"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(7)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:first-child'); //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(7)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:first-child'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "Mom"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:first-child'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(2)'); //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:first-child'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(2)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "Dad"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(2)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(3)'); //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(2)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(3)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "The dog"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(3)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(4)'); //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(3)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(4)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "My teacher"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(4)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(5)'); //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(4)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(5)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "The elephant"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(5)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(6)');  //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(5)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(6)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else if (playbackArray[0] === "The cat"){ //Check word in playback array
-        let nounItem = document.querySelector('section div:nth-child(1) ol li:nth-child(6)'); //Selects element to remove box shadow
-        let nounItem2 = document.querySelector('section div:nth-child(1) ol li:nth-child(7)');  //Select element to add box shadow too
-        nounItem.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
-        nounItem2.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+        let removeHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(6)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(1) ol li:nth-child(7)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
     } else{ //Else if for some reason no word is selected remove highlight from each box
         for (let i = 1; i < 8; i ++){ //For loop to go through elements
-            let nounItem = document.querySelector(`section div:nth-child(1) ol li:nth-child(${i})`); //Select element
-            nounItem.style.boxShadow = "0 0 0 0" ;//Remove box shadow
+            let removeHighlight = document.querySelector(`section div:nth-child(1) ol li:nth-child(${i})`); //Select element
+            removeHighlight.style.boxShadow = "0 0 0 0" ;//Remove box shadow
         }
     }
 }
@@ -85,10 +86,50 @@ verbButton.addEventListener("click", selectVerb); //Add event to button on click
 function selectVerb(){
     console.log(`${verbArray[verbIncrement]}`); //Console log for testing
     playbackArray[1] = verbArray[verbIncrement]; //Add verb to playback array
+    highlightVerb();
     if (verbIncrement > 4){ //Check if increment is greater than 4
         verbIncrement = 0; //reset increment to 0
     }else{
         verbIncrement ++; //Increase increment
+    }
+}
+//Setup Verb highlight
+function highlightVerb(){
+    if (playbackArray[1] === "sat on"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(6)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:first-child'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[1] === "ate"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:first-child'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(2)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[1] === "danced with"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(2)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(3)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[1] === "saw"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(3)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(4)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[1] === "doesn't like"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(4)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(5)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[1] === "kissed"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(5)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(2) ol li:nth-child(6)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else{ //Else if for some reason no word is selected remove highlight from each box
+        for (let i = 1; i < 7; i ++){ //For loop to go through elements
+            let removeHighlight = document.querySelector(`section div:nth-child(2) ol li:nth-child(${i})`); //Select element
+            removeHighlight.style.boxShadow = "0 0 0 0" ;//Remove box shadow
+        }
     }
 }
 
@@ -108,10 +149,50 @@ adjectiveButton.addEventListener("click", selectAdjective); //Add event to butto
 function selectAdjective(){
     console.log(`${adjectiveArray[adjectiveIncrement]}`); //Console log for testing
     playbackArray[2] = adjectiveArray[adjectiveIncrement]; //Add adjective to playback array
+    highlightAdjective();
     if (adjectiveIncrement > 4){ //Check if increment is greater than 4
         adjectiveIncrement = 0; //reset increment to 0
     }else{
         adjectiveIncrement ++; //Increase increment
+    }
+}
+// Setup adjective highlight
+function highlightAdjective(){
+    if (playbackArray[2] === "a funny"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(6)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:first-child'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[2] === "a scary"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:first-child'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(2)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[2] === "a goofy"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(2)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(3)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[2] === "a slimy"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(3)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(4)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[2] === "a barking"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(4)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(5)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[2] === "a fat"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(5)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(3) ol li:nth-child(6)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else{ //Else if for some reason no word is selected remove highlight from each box
+        for (let i = 1; i < 7; i ++){ //For loop to go through elements
+            let removeHighlight = document.querySelector(`section div:nth-child(3) ol li:nth-child(${i})`); //Select element
+            removeHighlight.style.boxShadow = "0 0 0 0" ;//Remove box shadow
+        }
     }
 }
 
@@ -131,10 +212,55 @@ animalButton.addEventListener("click", selectAnimal); //Add event to button on c
 function selectAnimal(){
     console.log(`${animalArray[animalIncrement]}`); //Console log for testing
     playbackArray[3] = animalArray[animalIncrement]; //Add animal to playback array
-    if (animalIncrement > 5){ //Check if increment is greater than 5
+    highlightAnimal();
+    if (animalIncrement > 6){ //Check if increment is greater than 5
         animalIncrement = 0; //reset increment to 0
     }else{
         animalIncrement ++; //Increase increment
+    }
+}
+
+function highlightAnimal(){
+    if (playbackArray[3] === "goat"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(7)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:first-child'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "monkey"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:first-child'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(2)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "fish"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(2)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(3)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "cow"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(3)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(4)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "frog"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(4)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(5)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "bug"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(5)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(6)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[3] === "worm"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(6)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(7)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else{ //Else if for some reason no word is selected remove highlight from each box
+        for (let i = 1; i < 8; i ++){ //For loop to go through elements
+            let removeHighlight = document.querySelector(`section div:nth-child(4) ol li:nth-child(${i})`); //Select element
+            removeHighlight.style.boxShadow = "0 0 0 0" ;//Remove box shadow
+        }
     }
 }
 
