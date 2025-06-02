@@ -18,7 +18,7 @@ nounButton.addEventListener("click", selectNoun); //Add event to button on click
 function selectNoun(){ //Function for selecting noun
     console.log(`${nounArray[nounIncrement]}`); //Console log for testing
     playbackArray[0] = nounArray[nounIncrement]; //Store current noun in playback array
-    highlightNoun();
+    highlightNoun(); //Call function
     if (nounIncrement > 5){ //Check if increment is greater than 5
         nounIncrement = 0; //Resets increment
     }else{
@@ -87,7 +87,7 @@ verbButton.addEventListener("click", selectVerb); //Add event to button on click
 function selectVerb(){
     console.log(`${verbArray[verbIncrement]}`); //Console log for testing
     playbackArray[1] = verbArray[verbIncrement]; //Add verb to playback array
-    highlightVerb();
+    highlightVerb(); //Call function
     if (verbIncrement > 4){ //Check if increment is greater than 4
         verbIncrement = 0; //reset increment to 0
     }else{
@@ -151,7 +151,7 @@ adjectiveButton.addEventListener("click", selectAdjective); //Add event to butto
 function selectAdjective(){
     console.log(`${adjectiveArray[adjectiveIncrement]}`); //Console log for testing
     playbackArray[2] = adjectiveArray[adjectiveIncrement]; //Add adjective to playback array
-    highlightAdjective();
+    highlightAdjective(); //Call function
     if (adjectiveIncrement > 4){ //Check if increment is greater than 4
         adjectiveIncrement = 0; //reset increment to 0
     }else{
@@ -284,7 +284,7 @@ locationButton.addEventListener("click", selectLocation); //Add event to button 
 function selectLocation(){
     console.log(`${locationArray[locationIncrement]}`); //Console log for testing
     playbackArray[4] = locationArray[locationIncrement]; //Add location to playback array
-    highlightLocation();
+    highlightLocation(); //Call function
     if (locationIncrement > 5){ //Check if increment is greater than 4
         locationIncrement = 0; //reset increment to 0
     }else{

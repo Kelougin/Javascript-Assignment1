@@ -1,88 +1,85 @@
 body{
-    background-color: yellow;
-    justify-items: center;
-}
-header{
-
+    background-color: yellow; /* Set background color */
+    justify-items: center; /* Justify items to center */
 }
 main{
-    display: grid;
-    grid-template-areas:
+    display: grid; /* Set main to grid */
+    grid-template-areas: /* Set grid areas */
     "Words"
     "Buttons";
 }
 section{
-    display: flex;
-    padding: 20px;
+    display: flex; /* Set display to flex */
+    padding: 20px; /* Set padding */
 }
 main section:first-child{
-    grid-area: Words;
+    grid-area: Words; /* Set grid area */
 }
 main section:nth-child(2){
-    grid-area: Buttons;
-    flex-direction: column;
-    padding-top: 0;
+    grid-area: Buttons; /* Set grid area */
+    flex-direction: column; /* Set direction to column */
+    padding-top: 0; /* Remove padding from top */
 }
 main section:nth-child(2) div{
-    display: flex;
+    display: flex; /* Set display to flex */
 }
 ol{
-    margin: 20px;
-    padding: 10px;
-    text-decoration: none;
-    list-style: none;
+    margin: 20px; /* Add margin around element */
+    padding: 10px; /* Add padding around items */
+    text-decoration: none; /* Remove text decoration */
+    list-style: none; /* Remove list style */
 }
 li{
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-    padding: 10px;
+    font-size: 2.4rem; /* Set font size */
+    margin-bottom: 10px; /* set margin at bottom of element */
+    padding: 10px; /* Set padding around items */
 }
 section div:nth-child(1) ol, section div:nth-child(2) ol,
 section div:nth-child(3) ol, section div:nth-child(4) ol,
 section div:nth-child(5) ol{
-    border-radius: 25px;
+    border-radius: 25px; /* Creat rounded border */
 }
 #noun, #verb, #adjective,#animal,#location, #random, #playback{
-    border-radius: 50%;
+    border-radius: 50%; /* Create circle buttons */
 }
 section div:nth-child(1) ol, #noun{
-    background-color: purple;
+    background-color: purple; /* Set background color */
 }
 section div:nth-child(2) ol, #verb{
-    background-color: lightskyblue;
+    background-color: lightskyblue; /* Set background color */
 }
 section div:nth-child(3) ol, #adjective{
-    background-color: lime;
+    background-color: lime; /* Set background color */
 }
 section div:nth-child(4) ol, #animal{
-    background-color: orange;
+    background-color: orange; /* Set background color */
 }
 section div:nth-child(5) ol, #location{
-    background-color: deeppink;
+    background-color: deeppink; /* Set background color */
 }
 #random{
-    background-color: red;
+    background-color: red; /* Set background color */
 }
 #playback{
-    background-color: green;
+    background-color: green; /* Set background color */
 }
 button{
-    margin: 50px;
-    padding: 30px;
+    margin: 50px; /* Set margin around element */
+    padding: 30px; /* Set padding around items */
 }
 h1{
-    font-size: 4.8rem;
-    color: deepskyblue;
+    font-size: 4.8rem; /* Set font size */
+    color: deepskyblue; /* Set text color  */
 }
 p{
-    margin: 20px;
-    font-size: 1.2rem;
-    display: flex;
-    height: fit-content;
-    width: 250px;
+    margin: 20px; /* Set margin around element  */
+    font-size: 1.2rem;/* Set font size */
+    display: flex; /* set to flex  */
+    height: fit-content; /* set height to fit content  */
+    width: 250px; /* set width of element  */
 }
 main section:nth-child(2) div p:nth-child(4){
-    position: relative;
-    left: -22.5%;
-    bottom: -45%;
+    position: relative;/* set position to relative */
+    left: -22.5%; /* Move element to the left  */
+    bottom: -45%; /* move element down  */
 }
