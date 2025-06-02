@@ -285,7 +285,7 @@ function selectLocation(){
     console.log(`${locationArray[locationIncrement]}`); //Console log for testing
     playbackArray[4] = locationArray[locationIncrement]; //Add location to playback array
     highlightLocation(); //Call function
-    if (locationIncrement > 5){ //Check if increment is greater than 4
+    if (locationIncrement > 4){ //Check if increment is greater than 4
         locationIncrement = 0; //reset increment to 0
     }else{
         locationIncrement ++; //Increase increment
