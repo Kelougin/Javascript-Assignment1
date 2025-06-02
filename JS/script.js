@@ -25,6 +25,7 @@ function selectNoun(){ //Function for selecting noun
         nounIncrement ++; //Increment to cycle to next noun
     }
 }
+
 //Setup noun highlight
 function highlightNoun(){
     if (playbackArray[0] === "The turkey"){ //Check word in playback array
@@ -93,6 +94,7 @@ function selectVerb(){
         verbIncrement ++; //Increase increment
     }
 }
+
 //Setup Verb highlight
 function highlightVerb(){
     if (playbackArray[1] === "sat on"){ //Check word in playback array
@@ -156,6 +158,7 @@ function selectAdjective(){
         adjectiveIncrement ++; //Increase increment
     }
 }
+
 // Setup adjective highlight
 function highlightAdjective(){
     if (playbackArray[2] === "a funny"){ //Check word in playback array
@@ -213,13 +216,14 @@ function selectAnimal(){
     console.log(`${animalArray[animalIncrement]}`); //Console log for testing
     playbackArray[3] = animalArray[animalIncrement]; //Add animal to playback array
     highlightAnimal(); //Call function
-    if (animalIncrement > 6){ //Check if increment is greater than 5
+    if (animalIncrement > 5){ //Check if increment is greater than 5
         animalIncrement = 0; //reset increment to 0
     }else{
         animalIncrement ++; //Increase increment
     }
 }
 
+//Setup animal highlight
 function highlightAnimal(){
     if (playbackArray[3] === "goat"){ //Check word in playback array
         let removeHighlight = document.querySelector('section div:nth-child(4) ol li:nth-child(7)'); //Selects element to remove box shadow
@@ -280,12 +284,54 @@ locationButton.addEventListener("click", selectLocation); //Add event to button 
 function selectLocation(){
     console.log(`${locationArray[locationIncrement]}`); //Console log for testing
     playbackArray[4] = locationArray[locationIncrement]; //Add location to playback array
-    if (locationIncrement > 4){ //Check if increment is greater than 4
+    highlightLocation();
+    if (locationIncrement > 5){ //Check if increment is greater than 4
         locationIncrement = 0; //reset increment to 0
     }else{
         locationIncrement ++; //Increase increment
     }
 }
+
+//Setup location highlight
+function highlightLocation(){
+    if (playbackArray[4] === "on the moon"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(6)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:first-child'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[4] === "on the chair"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:first-child'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(2)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[4] === "in my spaghetti"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(2)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(3)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[4] === "in my soup"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(3)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(4)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[4] === "on the grass"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(4)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(5)'); //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else if (playbackArray[4] === "in my shoes"){ //Check word in playback array
+        let removeHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(5)'); //Selects element to remove box shadow
+        let addHighlight = document.querySelector('section div:nth-child(5) ol li:nth-child(6)');  //Select element to add box shadow too
+        removeHighlight.style.boxShadow = "0 0 0 0"; //Remove box shadow with style
+        addHighlight.style.boxShadow = "0 0 3px 2px white"; //Add box shadow using style
+    } else{ //Else if for some reason no word is selected remove highlight from each box
+        for (let i = 1; i < 7; i ++){ //For loop to go through elements
+            let removeHighlight = document.querySelector(`section div:nth-child(5) ol li:nth-child(${i})`); //Select element
+            removeHighlight.style.boxShadow = "0 0 0 0" ;//Remove box shadow
+        }
+    }
+}
+
 //Setup text display
 const buttonSection = document.querySelector('main section:nth-child(2) div:nth-child(2)'); //Select button section
 const displayPlayback = document.createElement('p'); //Create element p
